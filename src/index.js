@@ -3,20 +3,18 @@ module.exports = function makeExchange(currency) {
 	if(currency > 10000)
 		return {error:"You are rich, my friend! We don't have so much coins for exchange"}
 
-
-    var rates = {
+    let rates = {
     	H : 50,
     	Q : 25,
     	D : 10,
     	N : 5,
     	P : 1
     }
-    var result = {}
+    let result = {}
 
-
-    for(var rateName in rates)
+    for(let rateName in rates)
     {
-    	var ExAmount = Math.floor(currency / rates[rateName])
+    	let ExAmount = Math.floor(currency / rates[rateName])
     	if(ExAmount > 0)
     	{
     		result[rateName] = ExAmount;
